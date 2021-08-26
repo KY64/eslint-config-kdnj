@@ -1,0 +1,57 @@
+{
+  "name": "eslint-config-kdnj",
+  "description": "Koding Ninja's ESLint configuration with bundled dependencies",
+  "version": "0.0.1",
+  "homepage": "https://github.com/kodingdotninja/eslint-config-kdnj",
+  "repository": "https://github.com/kodingdotninja/eslint-config-kdnj.git",
+  "author": "Griko Nibras <griko@koding.ninja>",
+  "scripts": {
+    "# general commands": "##################################################",
+    "deduplicate": "npx yarn-deduplicate && yarn",
+    "lint": "eslint --fix \"./**/*.{js,ts}\"",
+    "prepare": "husky install && shx rm -rf .git/hooks && shx ln -s ../.husky .git/hooks",
+    "prepublishOnly": "yarn lint",
+    "test": "yarn lint",
+    "validate": "yarn lint",
+    "#": "###################################################################"
+  },
+  "dependencies": {
+    "eslint": "^7",
+    "eslint-config-kentcdodds": "^19",
+    "eslint-config-prettier": "^8",
+    "eslint-plugin-prettier": "^3",
+    "eslint-plugin-simple-import-sort": "^7",
+    "prettier": "^2",
+    "typescript": "^4"
+  },
+  "devDependencies": {
+    "husky": "^7",
+    "lint-staged": "^11",
+    "shx": "^0"
+  },
+  "optionalDependencies": {
+    "eslint-plugin-jsx-a11y": "^6",
+    "eslint-plugin-react": "^7"
+  },
+  "eslintConfig": {
+    "extends": [
+      "./index.js"
+    ]
+  },
+  "lint-staged": {
+    "*.{js,json,md}": [
+      "prettier --write"
+    ],
+    "**/*.{js,jsx,ts,tsx}": [
+      "eslint --fix"
+    ]
+  },
+  "prettier": {
+    "endOfLine": "auto",
+    "printWidth": 120,
+    "semi": true,
+    "singleQuote": false,
+    "trailingComma": "all"
+  },
+  "license": "MIT"
+}

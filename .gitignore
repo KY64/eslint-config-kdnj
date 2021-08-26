@@ -1,0 +1,17 @@
+**/node_modules/
+*.log
+.DS_Store
+.env*
+.eslintcache
+.next
+.pnp.*
+.vercel
+.yarn/*
+package-lock.json
+
+!.env.example
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
