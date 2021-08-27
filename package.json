@@ -1,7 +1,7 @@
 {
   "name": "eslint-config-kdnj",
   "description": "Koding Ninja's ESLint configuration with bundled dependencies",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "homepage": "https://github.com/kodingdotninja/eslint-config-kdnj",
   "repository": "https://github.com/kodingdotninja/eslint-config-kdnj.git",
   "author": "Griko Nibras <griko@koding.ninja>",
@@ -53,5 +53,12 @@
     "singleQuote": false,
     "trailingComma": "all"
   },
+  "keywords": [
+    "eslint",
+    "eslint-config",
+    "eslint-config-kdnj",
+    "kdnj",
+    "kodingdotninja"
+  ],
   "license": "MIT"
 }
