@@ -1,5 +1,21 @@
 // @ts-check
 
+/** @type {string[]} */
+const ignoredImportExtensions = [
+  "bmp",
+  "css",
+  "gif",
+  "graphql",
+  "ico",
+  "jpeg",
+  "jpg",
+  "json",
+  "png",
+  "svg",
+  "webp",
+  //
+];
+
 /** @type {import("eslint").Linter.Config} */
 module.exports = {
   extends: ["plugin:prettier/recommended", "prettier", "kentcdodds"],
@@ -10,11 +26,7 @@ module.exports = {
     "import/extensions": [
       "warn",
       "never",
-      {
-        css: "ignorePackages",
-        graphql: "ignorePackages",
-        json: "ignorePackages",
-      },
+      Object.fromEntries(ignoredImportExtensions.map((ext) => [ext, "ignorePackages"])),
     ],
     "import/newline-after-import": "warn",
     "import/order": "off",
